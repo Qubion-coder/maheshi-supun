@@ -1,0 +1,6 @@
+{
+  "name": "The Ascent · Elena & Julian Wedding",
+  "description": "A cinematic mountain journey celebrating the marriage of Elena & Julian. Climb from misty foothills to the golden alpine summit.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
