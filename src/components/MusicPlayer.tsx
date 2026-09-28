@@ -3,9 +3,9 @@ import { Volume2, VolumeX, Play, Pause, Music } from 'lucide-react';
 import { mountainAudio } from '../utils/audioEngine';
 
 export const MusicPlayer: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
-  const [showPrompt, setShowPrompt] = useState(true);
+  const [showPrompt, setShowPrompt] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const togglePlay = () => {
@@ -38,8 +38,23 @@ export const MusicPlayer: React.FC = () => {
     }
   };
 
-  // Hide the initial prompt after 9 seconds
+  // Attempt auto-play on mount
   useEffect(() => {
+    let playSuccess = false;
+
+    if (audioRef.current) {
+      audioRef.current.play().then(() => {
+        playSuccess = true;
+      }).catch(() => {
+        // Autoplay prevented
+        setIsPlaying(false);
+        setShowPrompt(true);
+      });
+    }
+
+    mountainAudio.start().catch(() => {});
+
+    // Hide the initial prompt after 9 seconds if it was shown
     const timer = setTimeout(() => {
       setShowPrompt(false);
     }, 9000);
@@ -52,6 +67,7 @@ export const MusicPlayer: React.FC = () => {
         ref={audioRef}
         src="/Harry Styles - Sweet Creature (Audio).mp3"
         loop
+        autoPlay
       />
 
       {/* Floating Tasteful Music Bar (Fixed at bottom right) */}
