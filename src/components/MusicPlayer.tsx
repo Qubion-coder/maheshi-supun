@@ -38,21 +38,26 @@ export const MusicPlayer: React.FC = () => {
     }
   };
 
-  // Attempt auto-play on mount
+  // Pick up the audio element that was started during the IntroScreen click
   useEffect(() => {
-    let playSuccess = false;
-
-    if (audioRef.current) {
-      audioRef.current.play().then(() => {
-        playSuccess = true;
+    const existingAudio = (window as any).__weddingAudio as HTMLAudioElement | undefined;
+    
+    if (existingAudio) {
+      audioRef.current = existingAudio;
+      setIsPlaying(!existingAudio.paused);
+    } else {
+      // Fallback: create audio and try to play
+      const audio = new Audio('/Harry Styles - Sweet Creature (Audio).mp3');
+      audio.loop = true;
+      audioRef.current = audio;
+      audio.play().then(() => {
+        setIsPlaying(true);
       }).catch(() => {
-        // Autoplay prevented
         setIsPlaying(false);
         setShowPrompt(true);
       });
+      mountainAudio.start().catch(() => {});
     }
-
-    mountainAudio.start().catch(() => {});
 
     // Hide the initial prompt after 9 seconds if it was shown
     const timer = setTimeout(() => {
@@ -63,12 +68,6 @@ export const MusicPlayer: React.FC = () => {
 
   return (
     <>
-      <audio
-        ref={audioRef}
-        src="/Harry Styles - Sweet Creature (Audio).mp3"
-        loop
-        autoPlay
-      />
 
       {/* Floating Tasteful Music Bar (Fixed at bottom right) */}
       <div className="fixed bottom-5 right-4 sm:right-6 z-50 flex items-center gap-2">

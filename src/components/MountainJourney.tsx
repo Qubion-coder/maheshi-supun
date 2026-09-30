@@ -38,16 +38,16 @@ export const MountainJourney: React.FC<MountainJourneyProps> = ({ children }) =>
   return (
     <div className="relative min-h-screen text-[#e8eee9] overflow-x-hidden selection:bg-[#8c6721]/30 selection:text-[#f8f5ee] bg-[#07120d]">
       
-      {/* Temp Static Background Image with Parallax */}
+      {/* Static Background Image with slow downward parallax */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#07120d]">
         <div 
           className="absolute top-0 left-0 w-full"
           style={{
-            height: "120vh",
-            backgroundImage: "url('/Gemini_Generated_Image_9dsweu9dsweu9dsw.jpg')",
+            height: "250vh",
+            backgroundImage: "url('/Gemini_Generated_Image_mnqwzfmnqwzfmnqw.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "top center",
-            transform: `translateY(-${scrollProgress * 20}vh)`,
+            transform: `translateY(-${scrollProgress * 150}vh)`,
             willChange: "transform",
             opacity: 0.45
           }}

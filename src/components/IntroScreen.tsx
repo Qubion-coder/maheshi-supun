@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { Play } from 'lucide-react';
+import { mountainAudio } from '../utils/audioEngine';
 
 interface IntroScreenProps {
   onComplete: () => void;
@@ -13,6 +14,18 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
 
   const startIntro = () => {
     setIsPlaying(true);
+
+    // Start audio immediately within the user gesture context
+    // This ensures browsers allow autoplay since it originates from a click
+    const audio = new Audio('/Harry Styles - Sweet Creature (Audio).mp3');
+    audio.loop = true;
+    audio.volume = 1;
+    audio.play().catch(() => {});
+    // Store globally so MusicPlayer can pick it up
+    (window as any).__weddingAudio = audio;
+
+    // Start procedural mountain audio within user gesture
+    mountainAudio.start().catch(() => {});
     
     setTimeout(() => {
       if (videoRef.current) {
