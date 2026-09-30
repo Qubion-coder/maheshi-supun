@@ -123,3 +123,4 @@ export const WindingPath: React.FC<WindingPathProps> = ({ scrollProgress }) => {
     </div>
   );
 };
+

@@ -33,7 +33,7 @@ export const ParentsSection: React.FC = () => {
     <section ref={sectionRef} className="relative min-h-[80vh] flex items-center justify-center px-4 py-20 z-10">
       <div ref={containerRef} className="max-w-4xl w-full flex flex-col items-center text-center">
         
-        <h2 className="font-serif text-3xl md:text-4xl text-[#e8eee9] font-medium tracking-wide mb-12 drop-shadow-md">
+        <h2 className="font-serif text-3xl md:text-4xl gold-gradient-text font-medium tracking-wide mb-12 drop-shadow-md">
           With the Blessings of Our Parents
         </h2>
 
@@ -41,34 +41,34 @@ export const ParentsSection: React.FC = () => {
           
           {/* BRIDE'S PARENTS */}
           <div className="flex flex-col items-center">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-[#86a894] font-medium mb-4">
+            <div className="text-[10px] uppercase tracking-[0.3em] text-[#8c6721] font-medium mb-4">
               Bride's Parents
             </div>
             <div className="space-y-4">
               <div>
-                <div className="text-[9px] uppercase tracking-widest text-[#72877a] mb-1">Father</div>
-                <div className="font-serif text-lg text-[#ffffff]">{weddingData.parents.bride.father}</div>
+                <div className="text-[9px] uppercase tracking-widest text-[#a8bdae] mb-1">Father</div>
+                <div className="font-serif text-lg text-white">{weddingData.parents.bride.father}</div>
               </div>
               <div>
-                <div className="text-[9px] uppercase tracking-widest text-[#72877a] mb-1">Mother</div>
-                <div className="font-serif text-lg text-[#ffffff]">{weddingData.parents.bride.mother}</div>
+                <div className="text-[9px] uppercase tracking-widest text-[#a8bdae] mb-1">Mother</div>
+                <div className="font-serif text-lg text-white">{weddingData.parents.bride.mother}</div>
               </div>
             </div>
           </div>
 
           {/* GROOM'S PARENTS */}
           <div className="flex flex-col items-center">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-[#86a894] font-medium mb-4">
+            <div className="text-[10px] uppercase tracking-[0.3em] text-[#8c6721] font-medium mb-4">
               Groom's Parents
             </div>
             <div className="space-y-4">
               <div>
-                <div className="text-[9px] uppercase tracking-widest text-[#72877a] mb-1">Father</div>
-                <div className="font-serif text-lg text-[#ffffff]">{weddingData.parents.groom.father}</div>
+                <div className="text-[9px] uppercase tracking-widest text-[#a8bdae] mb-1">Father</div>
+                <div className="font-serif text-lg text-white">{weddingData.parents.groom.father}</div>
               </div>
               <div>
-                <div className="text-[9px] uppercase tracking-widest text-[#72877a] mb-1">Mother</div>
-                <div className="font-serif text-lg text-[#ffffff]">{weddingData.parents.groom.mother}</div>
+                <div className="text-[9px] uppercase tracking-widest text-[#a8bdae] mb-1">Mother</div>
+                <div className="font-serif text-lg text-white">{weddingData.parents.groom.mother}</div>
               </div>
             </div>
           </div>
@@ -76,8 +76,9 @@ export const ParentsSection: React.FC = () => {
         </div>
 
         {/* Decorative divider */}
-        <div className="mt-16 w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d4b07b]/50 to-transparent" />
+        <div className="mt-16 w-24 h-[1px] bg-gradient-to-r from-transparent via-[#8c6721]/50 to-transparent" />
       </div>
     </section>
   );
 };
+

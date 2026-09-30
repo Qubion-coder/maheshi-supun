@@ -35,15 +35,15 @@ export const VenueSection: React.FC = () => {
     <section ref={sectionRef} className="relative min-h-[60vh] flex items-center justify-center px-4 py-20 z-10">
       <div ref={contentRef} className="max-w-xl w-full flex flex-col items-center text-center">
         
-        <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-6 bg-white/5 backdrop-blur-md">
-          <MapPin className="w-5 h-5 text-white" />
+        <div className="w-12 h-12 rounded-full border border-[#8c6721]/40 gold-glow flex items-center justify-center mb-6 bg-[#1a2e22]/50 backdrop-blur-md">
+          <MapPin className="w-5 h-5 text-[#8c6721]" />
         </div>
 
-        <h3 className="font-serif text-3xl md:text-4xl text-white font-medium mb-3 drop-shadow-md">
+        <h3 className="font-serif text-3xl md:text-4xl gold-gradient-text font-medium mb-3 drop-shadow-md">
           Grandeeza Luxury Hotel, Negombo
         </h3>
         
-        <p className="font-sans text-sm md:text-base text-[#e8eee9] opacity-80 font-light max-w-sm mx-auto mb-10">
+        <p className="font-sans text-sm md:text-base text-white opacity-90 font-light max-w-sm mx-auto mb-10">
           A stunning destination set against breathtaking views, where our celebration of love will take place.
         </p>
 
@@ -51,15 +51,16 @@ export const VenueSection: React.FC = () => {
           href={weddingData.locationUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white transition-all duration-300 backdrop-blur-md text-white shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+          className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1b3a2a]/60 hover:bg-[#254d39]/80 border border-[#8c6721]/60 hover:border-[#8c6721] transition-all duration-300 backdrop-blur-md text-white shadow-[0_0_20px_rgba(212,176,123,0.15)] hover:shadow-[0_0_30px_rgba(212,176,123,0.3)]"
         >
-          <span className="text-xs md:text-sm uppercase tracking-[0.2em] font-medium">
+          <span className="text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-[#8c6721] group-hover:text-white transition-colors">
             View Location
           </span>
-          <MapPin className="w-4 h-4 group-hover:scale-110 transition-transform" />
+          <MapPin className="w-4 h-4 text-[#8c6721] group-hover:text-white transition-colors group-hover:scale-110" />
         </a>
 
       </div>
     </section>
   );
 };
+

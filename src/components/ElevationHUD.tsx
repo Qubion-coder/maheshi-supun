@@ -38,7 +38,7 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
           onClick={() => onNavigateToSection('hero')}
           className="text-left group cursor-pointer focus:outline-none"
         >
-          <span className="font-serif text-lg tracking-wider text-[#e8eee9] group-hover:text-[#e4be83] transition-colors">
+          <span className="font-serif text-lg tracking-wider text-white group-hover:text-[#6b4f1a] transition-colors">
             {WEDDING_COUPLE.initials}
           </span>
           <span className="hidden sm:inline-block ml-3 text-xs tracking-widest text-[#8a9d91] uppercase">
@@ -49,7 +49,7 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
         {/* Zone 2: Altimeter & Stage Gauge */}
         <div className="flex items-center gap-3 md:gap-5 text-xs text-[#a2b5a9]">
           <div className="flex items-center gap-1.5 bg-[#142019]/80 px-2.5 py-1 rounded-md border border-[#2b3d32]/60">
-            <Compass className="w-3.5 h-3.5 text-[#d4b07b]" />
+            <Compass className="w-3.5 h-3.5 text-[#8c6721]" />
             <span className="tabular-nums font-mono text-[#dcded8]">
               {Math.round(currentElevation)}m
             </span>
@@ -63,7 +63,7 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
           <div className="hidden lg:flex items-center gap-2">
             <div className="w-24 h-1 bg-[#192720] rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-[#7a9d86] via-[#d4b07b] to-[#f3cf8c] transition-all duration-300 rounded-full"
+                className="h-full bg-gradient-to-r from-[#7a9d86] via-[#8c6721] to-[#f3cf8c] transition-all duration-300 rounded-full"
                 style={{ width: `${Math.min(100, Math.max(5, progressPercent))}%` }}
               />
             </div>
@@ -79,11 +79,11 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
           <button
             onClick={toggleSound}
             aria-label={isAudioActive ? 'Mute ambient soundscape' : 'Play ambient mountain soundscape'}
-            className="p-2 rounded-lg bg-[#142019]/80 hover:bg-[#1f3026] text-[#b2c4b8] hover:text-[#f4f7f5] border border-[#2b3d32]/60 transition-colors focus:outline-none"
+            className="p-2 rounded-lg bg-[#142019]/80 hover:bg-[#1f3026] text-gray-600 hover:text-white border border-[#2b3d32]/60 transition-colors focus:outline-none"
             title={isAudioActive ? 'Mute mountain breeze' : 'Listen to mountain atmosphere'}
           >
             {isAudioActive ? (
-              <Volume2 className="w-4 h-4 text-[#e4be83] animate-pulse" />
+              <Volume2 className="w-4 h-4 text-[#6b4f1a] animate-pulse" />
             ) : (
               <VolumeX className="w-4 h-4" />
             )}
@@ -95,7 +95,7 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
               onClick={() => setIsNavOpen(!isNavOpen)}
               className="px-3 py-1.5 flex items-center gap-1.5 text-xs text-[#d3ded7] bg-[#142019]/80 hover:bg-[#1e2f25] border border-[#2b3d32]/60 rounded-lg transition-colors focus:outline-none"
             >
-              <MapPin className="w-3.5 h-3.5 text-[#d4b07b]" />
+              <MapPin className="w-3.5 h-3.5 text-[#8c6721]" />
               <span className="hidden sm:inline">Stages</span>
               <ChevronDown className={`w-3 h-3 transition-transform ${isNavOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -116,8 +116,8 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
                       }}
                       className={`w-full text-left px-3 py-2 rounded-lg text-xs flex items-center justify-between transition-colors ${
                         idx === currentStageIndex
-                          ? 'bg-[#22352a] text-[#f4dfb8] font-medium'
-                          : 'text-[#9eb1a6] hover:bg-[#17251d] hover:text-[#e4ede8]'
+                          ? 'bg-[#22352a] text-[#6b4f1a] font-medium'
+                          : 'text-[#9eb1a6] hover:bg-[#17251d] hover:text-white'
                       }`}
                     >
                       <span className="truncate mr-2">
@@ -135,7 +135,7 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
                       onNavigateToSection('rsvp');
                       setIsNavOpen(false);
                     }}
-                    className="w-full text-center py-2 text-xs font-medium text-[#111c15] bg-[#d4b07b] hover:bg-[#e4be83] rounded-lg transition-colors"
+                    className="w-full text-center py-2 text-xs font-medium text-[#111c15] bg-[#8c6721] hover:bg-[#e4be83] rounded-lg transition-colors"
                   >
                     RSVP to the Celebration
                   </button>
@@ -147,7 +147,7 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
           {/* Quick RSVP CTA button */}
           <button
             onClick={() => onNavigateToSection('rsvp')}
-            className="hidden md:inline-flex px-3.5 py-1.5 text-xs font-medium text-[#111d16] bg-[#d4b07b] hover:bg-[#e6c48f] rounded-lg transition-colors shadow-sm"
+            className="hidden md:inline-flex px-3.5 py-1.5 text-xs font-medium text-[#111d16] bg-[#8c6721] hover:bg-[#e6c48f] rounded-lg transition-colors shadow-sm"
           >
             RSVP
           </button>
@@ -156,3 +156,4 @@ export const ElevationHUD: React.FC<ElevationHUDProps> = ({
     </>
   );
 };
+

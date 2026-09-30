@@ -56,16 +56,20 @@ export const MemoryGallery: React.FC = () => {
 
   const photos = [
     { id: 1, src: "/pre/WhatsApp Image 2026-09-28 at 16.21.42.jpeg" },
-    { id: 2, src: "/pre/WhatsApp Image 2026-09-28 at 16.21.49.jpeg" },
-    { id: 3, src: "/pre/WhatsApp Image 2026-09-28 at 16.21.50.jpeg" },
-    { id: 4, src: "/pre/WhatsApp Image 2026-09-28 at 16.21.53.jpeg" },
+    { id: 2, src: "/pre/WhatsApp Image 2026-09-28 at 16.21.50.jpeg" },
+    { id: 3, src: "/pre/WhatsApp Image 2026-09-28 at 16.21.53.jpeg" },
+    { id: 4, src: "/pre/WhatsApp Image 2026-10-01 at 02.33.10 (1).jpeg" },
+    { id: 5, src: "/pre/WhatsApp Image 2026-10-01 at 02.34.17 (1).jpeg" },
+    { id: 6, src: "/pre/WhatsApp Image 2026-10-01 at 02.34.44 (1).jpeg" },
+    { id: 7, src: "/WhatsApp Image 2026-10-01 at 02.34.01 (2).jpeg" },
+    { id: 8, src: "/WhatsApp Image 2026-10-01 at 02.33.38 (2).jpeg" },
   ];
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex flex-col items-center justify-center px-4 py-24 z-10">
       <div ref={containerRef} className="w-full max-w-6xl flex flex-col items-center">
         
-        <h2 className="font-serif text-3xl md:text-5xl text-[#d4b07b] font-medium tracking-wide mb-20 drop-shadow-md">
+        <h2 className="font-serif text-3xl md:text-5xl gold-gradient-text font-medium tracking-wide mb-20 drop-shadow-md">
           Our Moments
         </h2>
 
@@ -74,7 +78,7 @@ export const MemoryGallery: React.FC = () => {
             <div 
               key={item.id}
               ref={(el) => (photosRef.current[i] = el)}
-              className="relative w-64 h-80 md:w-56 md:h-72 lg:w-64 lg:h-80 rounded-sm bg-[#12241a]/60 border-8 border-white/90 shadow-2xl overflow-hidden group"
+              className="relative w-64 h-80 md:w-56 md:h-72 lg:w-64 lg:h-80 rounded-sm bg-[#12241a]/60 border-8 border-[#8c6721]/40 shadow-2xl overflow-hidden group"
               style={{
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 176, 123, 0.1)"
               }}
@@ -93,3 +97,4 @@ export const MemoryGallery: React.FC = () => {
     </section>
   );
 };
+

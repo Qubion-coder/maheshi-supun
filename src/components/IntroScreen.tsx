@@ -56,10 +56,10 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
         <div className="animate-in fade-in duration-1000 flex flex-col items-center">
           <button 
             onClick={startIntro}
-            className="group flex items-center gap-4 px-10 py-5 rounded-full bg-[#1b3a2a]/60 hover:bg-[#254d39]/80 border border-[#d4b07b]/60 hover:border-[#d4b07b] transition-all backdrop-blur-md shadow-[0_0_20px_rgba(212,176,123,0.15)] hover:shadow-[0_0_30px_rgba(212,176,123,0.3)] text-[#f4dfb8] cursor-pointer"
+            className="group flex items-center gap-4 px-10 py-5 rounded-full bg-[#1b3a2a]/60 hover:bg-[#254d39]/80 border border-[#8c6721]/60 hover:border-[#8c6721] transition-all backdrop-blur-md shadow-[0_0_20px_rgba(212,176,123,0.15)] hover:shadow-[0_0_30px_rgba(212,176,123,0.3)] text-[#6b4f1a] cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-full bg-[#d4b07b]/20 flex items-center justify-center border border-[#d4b07b]/50 group-hover:bg-[#d4b07b] transition-colors">
-              <Play className="w-4 h-4 fill-[#d4b07b] text-[#d4b07b] group-hover:fill-[#1b3a2a] group-hover:text-[#1b3a2a]" />
+            <div className="w-10 h-10 rounded-full bg-[#8c6721]/20 flex items-center justify-center border border-[#8c6721]/50 group-hover:bg-[#8c6721] transition-colors">
+              <Play className="w-4 h-4 fill-[#8c6721] text-[#8c6721] group-hover:fill-[#1b3a2a] group-hover:text-[#1b3a2a]" />
             </div>
             <span className="text-sm md:text-base uppercase tracking-[0.3em] font-medium mr-2">View Invitation</span>
           </button>
@@ -83,9 +83,9 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
               </div>
               
               <div className="flex justify-center items-center gap-4">
-                <span className="word text-[#d4b07b] font-medium">Maheshi</span>
+                <span className="word text-[#8c6721] font-medium">Maheshi</span>
                 <span className="word italic font-light lowercase text-lg">&</span>
-                <span className="word text-[#d4b07b] font-medium">Supun</span>
+                <span className="word text-[#8c6721] font-medium">Supun</span>
               </div>
 
             </div>
@@ -102,3 +102,4 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
     </div>
   );
 };
+

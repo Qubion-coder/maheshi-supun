@@ -55,7 +55,7 @@ export const EventTimeline: React.FC = () => {
   return (
     <section ref={sectionRef} className="relative min-h-screen flex flex-col items-center py-32 z-10 overflow-hidden">
       
-      <h2 className="font-serif text-3xl md:text-5xl text-white font-medium tracking-wide mb-24 drop-shadow-md text-center">
+      <h2 className="font-serif text-3xl md:text-5xl gold-gradient-text font-medium tracking-wide mb-24 drop-shadow-md text-center">
         The Journey
       </h2>
 
@@ -77,13 +77,13 @@ export const EventTimeline: React.FC = () => {
             >
               {/* Content Side */}
               <div className={`w-1/2 flex flex-col ${isLeft ? 'items-end text-right pr-8 md:pr-16' : 'items-start text-left pl-8 md:pl-16'}`}>
-                <div className="font-serif text-xl md:text-3xl text-white mb-2">{event.time}</div>
-                <div className="font-sans text-sm md:text-base text-[#c8d8ce] uppercase tracking-widest">{event.title}</div>
+                <div className="font-serif text-xl md:text-3xl gold-gradient-text mb-2">{event.time}</div>
+                <div className="font-sans text-sm md:text-base text-white uppercase tracking-widest">{event.title}</div>
               </div>
 
               {/* Center Dot */}
-              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#1b3a2a] border-2 border-white z-10 flex items-center justify-center">
-                <div className="w-1 h-1 rounded-full bg-white" />
+              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#1b3a2a] border-2 border-[#8c6721] gold-glow z-10 flex items-center justify-center">
+                <div className="w-1 h-1 rounded-full bg-[#8c6721]" />
               </div>
 
               {/* Empty Side for balance */}
@@ -96,3 +96,4 @@ export const EventTimeline: React.FC = () => {
     </section>
   );
 };
+

@@ -56,11 +56,11 @@ export const MountainPanorama: React.FC = () => {
   return (
     <div className="max-w-5xl mx-auto my-20 px-4">
       <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#d4b07b] mb-2">
+        <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#8c6721] mb-2">
           <Eye className="w-3.5 h-3.5" />
           <span>Alpine Viewpoint Spyglass</span>
         </div>
-        <h3 className="font-serif text-3xl sm:text-4xl text-[#f3f7f4]">
+        <h3 className="font-serif text-3xl sm:text-4xl text-white">
           The Peaks That Guard Our Vows
         </h3>
         <p className="text-xs sm:text-sm text-[#9eb2a4] font-light mt-1 max-w-lg mx-auto">
@@ -78,15 +78,15 @@ export const MountainPanorama: React.FC = () => {
               onClick={() => setSelectedPeak(peak)}
               className={`p-3.5 rounded-xl text-left transition-all duration-300 cursor-pointer border ${
                 selectedPeak.id === peak.id
-                  ? 'bg-[#1b2f24] border-[#d4b07b] shadow-lg ring-1 ring-[#d4b07b]/30'
+                  ? 'bg-[#1b2f24] border-[#8c6721] shadow-lg ring-1 ring-[#8c6721]/30'
                   : 'bg-[#121f18] border-white/5 hover:border-[#385141] text-[#8ea496]'
               }`}
             >
-              <div className="flex items-center justify-between text-[11px] font-mono text-[#d4b07b] mb-1">
+              <div className="flex items-center justify-between text-[11px] font-mono text-[#8c6721] mb-1">
                 <span>{peak.bearing}</span>
                 <span>{peak.altitude}m</span>
               </div>
-              <div className="font-serif text-sm sm:text-base text-[#f4f7f4] font-medium truncate">
+              <div className="font-serif text-sm sm:text-base text-white font-medium truncate">
                 {peak.name}
               </div>
             </button>
@@ -130,24 +130,24 @@ export const MountainPanorama: React.FC = () => {
                 </>
               )}
               {/* Compass Needle Overlay */}
-              <circle cx="45" cy="45" r="20" stroke="#d4b07b" strokeWidth="1" strokeDasharray="3 3" />
-              <line x1="45" y1="30" x2="45" y2="60" stroke="#d4b07b" strokeWidth="1.5" />
-              <line x1="30" y1="45" x2="60" y2="45" stroke="#d4b07b" strokeWidth="1" />
+              <circle cx="45" cy="45" r="20" stroke="#8c6721" strokeWidth="1" strokeDasharray="3 3" />
+              <line x1="45" y1="30" x2="45" y2="60" stroke="#8c6721" strokeWidth="1.5" />
+              <line x1="30" y1="45" x2="60" y2="45" stroke="#8c6721" strokeWidth="1" />
             </svg>
-            <div className="absolute top-3 left-3 flex items-center gap-1.5 text-[10px] font-mono text-[#d4b07b] bg-[#0c1611]/80 px-2 py-0.5 rounded border border-white/5">
-              <Compass className="w-3 h-3 text-[#d4b07b]" />
+            <div className="absolute top-3 left-3 flex items-center gap-1.5 text-[10px] font-mono text-[#8c6721] bg-[#0c1611]/80 px-2 py-0.5 rounded border border-white/5">
+              <Compass className="w-3 h-3 text-[#8c6721]" />
               <span>BEARING {selectedPeak.bearing}</span>
             </div>
           </div>
 
           {/* Peak Description & Story Detail */}
           <div className="w-full md:w-1/2 space-y-3">
-            <div className="flex items-center gap-2 text-xs text-[#d4b07b] font-mono">
+            <div className="flex items-center gap-2 text-xs text-[#8c6721] font-mono">
               <Mountain className="w-3.5 h-3.5" />
               <span>Summit Elevation: {selectedPeak.altitude} meters</span>
             </div>
 
-            <h4 className="font-serif text-2xl sm:text-3xl text-[#f3f7f4]">
+            <h4 className="font-serif text-2xl sm:text-3xl text-white">
               {selectedPeak.name}
             </h4>
 
@@ -156,10 +156,10 @@ export const MountainPanorama: React.FC = () => {
             </p>
 
             <div className="pt-2 border-t border-white/5">
-              <div className="text-[10px] uppercase tracking-wider text-[#d4b07b] font-mono mb-1">
+              <div className="text-[10px] uppercase tracking-wider text-[#8c6721] font-mono mb-1">
                 Personal Significance
               </div>
-              <p className="font-serif italic text-sm text-[#e0ece5] leading-relaxed font-light">
+              <p className="font-serif italic text-sm text-white leading-relaxed font-light">
                 "{selectedPeak.memoryNote}"
               </p>
             </div>
@@ -169,3 +169,4 @@ export const MountainPanorama: React.FC = () => {
     </div>
   );
 };
+

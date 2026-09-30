@@ -33,34 +33,34 @@ export const WeddingDetails: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="relative min-h-[80vh] flex items-center justify-center px-4 py-20 z-10">
-      <div ref={containerRef} className="max-w-2xl w-full text-center flex flex-col items-center">
+      <div ref={containerRef} className="max-w-2xl w-full text-center flex flex-col items-center p-10 md:p-16 rounded-3xl bg-[#0f1b15]/70 backdrop-blur-xl border border-[#8c6721]/30 shadow-[0_0_60px_rgba(10,16,12,0.6)]">
         
-        <div className="flex items-center gap-4 mb-6 opacity-80 text-white">
+        <div className="flex items-center gap-4 mb-6 text-[#8c6721]">
           <Sparkles className="w-4 h-4" />
-          <h2 className="font-serif text-2xl md:text-3xl font-light tracking-[0.2em] uppercase">
+          <h2 className="font-serif text-2xl md:text-3xl font-light tracking-[0.2em] uppercase" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
             The Day
           </h2>
           <Sparkles className="w-4 h-4" />
         </div>
 
-        <div className="font-serif text-5xl md:text-7xl text-white font-medium mb-8 drop-shadow-xl tracking-tight">
+        <div className="font-serif text-5xl md:text-7xl gold-gradient-text font-medium mb-8 tracking-tight" style={{ filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.5))' }}>
           {weddingData.date}
         </div>
 
-        <div className="flex items-center justify-center gap-4 mb-8 text-[#e8eee9]">
-          <Flower className="w-5 h-5 opacity-60" />
-          <div className="text-lg md:text-2xl font-light tracking-widest uppercase">
+        <div className="flex items-center justify-center gap-4 mb-8 text-[#8c6721]">
+          <Flower className="w-5 h-5 opacity-80" />
+          <div className="text-lg md:text-2xl font-light tracking-widest uppercase text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
             {weddingData.time}
           </div>
-          <Flower className="w-5 h-5 opacity-60" />
+          <Flower className="w-5 h-5 opacity-80" />
         </div>
 
-        <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent mb-8" />
+        <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#8c6721]/60 to-transparent mb-8" />
 
-        <div className="font-serif text-2xl md:text-4xl text-white font-medium mb-2 drop-shadow-md">
+        <div className="font-serif text-2xl md:text-4xl gold-gradient-text font-medium mb-2" style={{ filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.5))' }}>
           {weddingData.venue}
         </div>
-        <div className="font-sans text-sm md:text-lg text-[#e8eee9] tracking-[0.2em] uppercase opacity-90">
+        <div className="font-sans text-sm md:text-lg text-[#8c6721] tracking-[0.2em] uppercase" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}>
           Negombo
         </div>
 
@@ -68,3 +68,4 @@ export const WeddingDetails: React.FC = () => {
     </section>
   );
 };
+

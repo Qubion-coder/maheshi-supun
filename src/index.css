@@ -10,7 +10,7 @@
     scroll-behavior: smooth;
     font-family: var(--font-sans);
     background-color: #0e1612;
-    color: #e8eee9;
+    color: #111111;
   }
 
   body {
@@ -32,7 +32,7 @@
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #fcefd2 0%, #dfb776 50%, #b88a44 100%);
+  background: linear-gradient(135deg, #d4b07b 0%, #c9a355 40%, #a88435 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

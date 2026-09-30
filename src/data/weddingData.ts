@@ -27,7 +27,7 @@ export const weddingData: WeddingConfig = {
     forestGreen: "#11261a",
     primary: "#1d442e",
     secondary: "#4d7a61",
-    accent: "#d4b07b",
+    accent: "#8c6721",
     icyWhite: "#ffffff",
   },
   timeline: [

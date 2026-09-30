@@ -62,45 +62,46 @@ export const SummitSection: React.FC = () => {
 
       <div ref={textRef} className="relative max-w-3xl w-full flex flex-col items-center text-center">
         
-        <p className="font-sans text-sm md:text-base text-[#e8eee9] uppercase tracking-[0.25em] leading-loose mb-16 drop-shadow-md">
+        <p className="font-sans text-sm md:text-base text-white uppercase tracking-[0.25em] leading-loose mb-16 drop-shadow-md">
           Together with our families,<br />
           we invite you to celebrate<br />
           our special day.
         </p>
 
         {/* BRIDE */}
-        <h3 className="font-serif text-2xl md:text-4xl text-[#ffffff] font-medium uppercase tracking-widest drop-shadow-lg mb-3">
+        <h3 className="font-serif text-2xl md:text-4xl gold-gradient-text font-medium uppercase tracking-widest drop-shadow-lg mb-3">
           {weddingData.bride}
         </h3>
 
-        <div className="font-serif italic text-2xl md:text-3xl text-[#d4b07b] font-light my-3">
+        <div className="font-serif italic text-2xl md:text-3xl text-[#8c6721] font-light my-3">
           &
         </div>
 
         {/* GROOM */}
-        <h3 className="font-serif text-2xl md:text-4xl text-[#ffffff] font-medium uppercase tracking-widest drop-shadow-lg mt-3 mb-12">
+        <h3 className="font-serif text-2xl md:text-4xl gold-gradient-text font-medium uppercase tracking-widest drop-shadow-lg mt-3 mb-12">
           {weddingData.groom}
         </h3>
 
-        <div className="w-16 h-[1px] bg-white/50 mb-12" />
+        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#8c6721]/60 to-transparent mb-12" />
 
-        <div className="font-sans text-sm md:text-base text-white tracking-[0.3em] uppercase mb-4">
+        <div className="font-sans text-sm md:text-base gold-gradient-text tracking-[0.3em] uppercase mb-4">
           {weddingData.date}
         </div>
 
         <div className="font-serif text-xl md:text-2xl text-white font-medium mb-1 drop-shadow-md">
           {weddingData.venue}
         </div>
-        <div className="font-sans text-xs md:text-sm text-[#e8eee9] tracking-[0.2em] uppercase opacity-90 mb-20">
+        <div className="font-sans text-xs md:text-sm text-[#8c6721] tracking-[0.2em] uppercase opacity-90 mb-20">
           Negombo
         </div>
 
         <div className="font-serif italic text-2xl md:text-3xl text-white drop-shadow-md">
           With love,<br />
-          <span className="text-[#d4b07b] mt-4 block not-italic font-medium uppercase tracking-widest text-lg">Maheshi & Supun</span>
+          <span className="gold-gradient-text mt-4 block not-italic font-medium uppercase tracking-widest text-lg">Maheshi & Supun</span>
         </div>
 
       </div>
     </section>
   );
 };
+

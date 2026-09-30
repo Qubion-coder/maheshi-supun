@@ -89,18 +89,18 @@ export const RSVPSection: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
-          <div className="flex items-center justify-center gap-2 text-xs tracking-[0.25em] uppercase text-[#d4b07b] mb-3">
-            <Heart className="w-3.5 h-3.5 fill-[#d4b07b]/30" />
+          <div className="flex items-center justify-center gap-2 text-xs tracking-[0.25em] uppercase text-[#8c6721] mb-3">
+            <Heart className="w-3.5 h-3.5 fill-[#8c6721]/30" />
             <span>Celebrate With Us</span>
             <span aria-hidden="true" className="text-[#88a996]">·</span>
             <span>Kindly Respond by 01st November 2026</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#f3f7f4] tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white tracking-tight">
             Reserve Your Place
           </h2>
 
-          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4b07b] to-transparent mx-auto my-4" />
+          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#8c6721] to-transparent mx-auto my-4" />
 
           <p className="text-sm sm:text-base text-[#a2b8ab] leading-relaxed font-light max-w-xl mx-auto">
             Please let us know if you will join us for our celebration at Grandeeza Luxury Hotel.
@@ -112,15 +112,15 @@ export const RSVPSection: React.FC = () => {
         <div className="rounded-3xl bg-[#0f2117]/90 backdrop-blur-xl border border-[#2b4c37]/80 shadow-2xl p-6 sm:p-10 md:p-12 mb-20">
           {submitted ? (
             <div className="text-center py-12 px-4 animate-in fade-in duration-500">
-              <div className="w-16 h-16 rounded-full bg-[#173525] text-[#d4b07b] mx-auto flex items-center justify-center mb-6 border border-[#2d5c42]">
-                <CheckCircle2 className="w-8 h-8 text-[#f0f7f4]" />
+              <div className="w-16 h-16 rounded-full bg-[#173525] text-[#8c6721] mx-auto flex items-center justify-center mb-6 border border-[#2d5c42]">
+                <CheckCircle2 className="w-8 h-8 text-white" />
               </div>
 
-              <h3 className="font-serif text-3xl sm:text-4xl text-[#f4f7f4] mb-3">
+              <h3 className="font-serif text-3xl sm:text-4xl text-white mb-3">
                 Your Celebration Seat Is Reserved
               </h3>
 
-              <p className="font-serif italic text-lg text-[#d4b07b] mb-4">
+              <p className="font-serif italic text-lg text-[#8c6721] mb-4">
                 Thank you, {formData.name || 'honored guest'}.
               </p>
 
@@ -132,7 +132,7 @@ export const RSVPSection: React.FC = () => {
 
               <button
                 onClick={() => setSubmitted(false)}
-                className="text-xs uppercase tracking-widest text-[#d4b07b] hover:text-[#e4be83] underline underline-offset-4 cursor-pointer"
+                className="text-xs uppercase tracking-widest text-[#8c6721] hover:text-[#6b4f1a] underline underline-offset-4 cursor-pointer"
               >
                 Modify Your Response
               </button>
@@ -150,7 +150,7 @@ export const RSVPSection: React.FC = () => {
                     onClick={() => setFormData({ ...formData, attending: 'yes' })}
                     className={`py-3.5 px-4 rounded-2xl text-xs sm:text-sm font-medium border text-center transition-all cursor-pointer ${
                       formData.attending === 'yes'
-                        ? 'bg-[#1b3a2a] border-[#d4b07b] text-[#f4dfb8] shadow-lg ring-1 ring-[#d4b07b]/40'
+                        ? 'bg-[#1b3a2a] border-[#8c6721] text-[#6b4f1a] shadow-lg ring-1 ring-[#8c6721]/40'
                         : 'bg-[#112419] border-[#294534] text-[#9bb0a3] hover:bg-[#162e20]'
                     }`}
                   >
@@ -161,7 +161,7 @@ export const RSVPSection: React.FC = () => {
                     onClick={() => setFormData({ ...formData, attending: 'no' })}
                     className={`py-3.5 px-4 rounded-2xl text-xs sm:text-sm font-medium border text-center transition-all cursor-pointer ${
                       formData.attending === 'no'
-                        ? 'bg-[#1b3a2a] border-[#d4b07b] text-[#f4dfb8] shadow-lg ring-1 ring-[#d4b07b]/40'
+                        ? 'bg-[#1b3a2a] border-[#8c6721] text-[#6b4f1a] shadow-lg ring-1 ring-[#8c6721]/40'
                         : 'bg-[#112419] border-[#294534] text-[#9bb0a3] hover:bg-[#162e20]'
                     }`}
                   >
@@ -174,7 +174,7 @@ export const RSVPSection: React.FC = () => {
               <div>
                 <label className="block text-xs uppercase tracking-wider text-[#a0b5a7] font-medium mb-2">
                   <span className="flex items-center gap-1.5">
-                    <User className="w-3.5 h-3.5 text-[#d4b07b]" />
+                    <User className="w-3.5 h-3.5 text-[#8c6721]" />
                     Full Name(s)
                   </span>
                 </label>
@@ -184,7 +184,7 @@ export const RSVPSection: React.FC = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Mr. & Mrs. Perera"
-                  className="w-full px-4 py-3 rounded-xl bg-[#0c1811] border border-[#2b4c37] text-[#f4f7f4] text-sm focus:outline-none focus:border-[#d4b07b] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#0c1811] border border-[#2b4c37] text-white text-sm focus:outline-none focus:border-[#8c6721] transition-colors"
                 />
               </div>
 
@@ -192,14 +192,14 @@ export const RSVPSection: React.FC = () => {
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-[#a0b5a7] font-medium mb-2">
                     <span className="flex items-center gap-1.5">
-                      <Users className="w-3.5 h-3.5 text-[#d4b07b]" />
+                      <Users className="w-3.5 h-3.5 text-[#8c6721]" />
                       Total In Your Party
                     </span>
                   </label>
                   <select
                     value={formData.guestsCount}
                     onChange={(e) => setFormData({ ...formData, guestsCount: Number(e.target.value) })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#0c1811] border border-[#2b4c37] text-[#f4f7f4] text-sm focus:outline-none focus:border-[#d4b07b] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0c1811] border border-[#2b4c37] text-white text-sm focus:outline-none focus:border-[#8c6721] transition-colors"
                   >
                     <option value={1}>1 Guest</option>
                     <option value={2}>2 Guests (Couple / Plus One)</option>
@@ -213,7 +213,7 @@ export const RSVPSection: React.FC = () => {
               <div>
                 <label className="block text-xs uppercase tracking-wider text-[#a0b5a7] font-medium mb-2">
                   <span className="flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-[#d4b07b]" />
+                    <Sparkles className="w-3.5 h-3.5 text-[#8c6721]" />
                     Words of Blessing or Message for Maheshi & Supun
                   </span>
                 </label>
@@ -222,7 +222,7 @@ export const RSVPSection: React.FC = () => {
                   value={formData.blessing}
                   onChange={(e) => setFormData({ ...formData, blessing: e.target.value })}
                   placeholder="Leave warm blessings for the couple's new beginning..."
-                  className="w-full px-4 py-3 rounded-xl bg-[#0c1811] border border-[#2b4c37] text-[#f4f7f4] text-sm focus:outline-none focus:border-[#d4b07b] transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-[#0c1811] border border-[#2b4c37] text-white text-sm focus:outline-none focus:border-[#8c6721] transition-colors resize-none"
                 />
               </div>
 
@@ -231,7 +231,7 @@ export const RSVPSection: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3.5 text-sm font-medium text-[#102016] bg-gradient-to-r from-[#d4b07b] via-[#e5c083] to-[#d4b07b] hover:brightness-110 rounded-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full sm:w-auto px-8 py-3.5 text-sm font-medium text-[#102016] bg-gradient-to-r from-[#8c6721] via-[#e5c083] to-[#8c6721] hover:brightness-110 rounded-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
                     <span>Confirm RSVP Here</span>
@@ -262,8 +262,8 @@ export const RSVPSection: React.FC = () => {
         {/* Live Guestbook / Blessings Wall */}
         <div className="mt-20">
           <div className="text-center mb-10">
-            <div className="text-xs uppercase tracking-[0.2em] text-[#d4b07b] mb-1">Cairn of Blessings</div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#f3f7f4]">
+            <div className="text-xs uppercase tracking-[0.2em] text-[#8c6721] mb-1">Cairn of Blessings</div>
+            <h3 className="font-serif text-2xl sm:text-3xl text-white">
               Words Along The Path
             </h3>
           </div>
@@ -278,8 +278,8 @@ export const RSVPSection: React.FC = () => {
                   "{b.message}"
                 </p>
                 <div className="border-t border-white/5 pt-3 flex items-center justify-between text-xs text-[#899f92]">
-                  <span className="font-medium text-[#e4ede8]">{b.name}</span>
-                  <span className="text-[#d4b07b] text-[11px]">{b.timestamp}</span>
+                  <span className="font-medium text-white">{b.name}</span>
+                  <span className="text-[#8c6721] text-[11px]">{b.timestamp}</span>
                 </div>
               </div>
             ))}
@@ -288,7 +288,7 @@ export const RSVPSection: React.FC = () => {
 
         {/* Final Peaceful Signoff */}
         <footer className="mt-32 text-center text-xs text-[#7a9586] border-t border-white/5 pt-12 space-y-2">
-          <p className="font-serif italic text-lg text-[#f0f7f4]">
+          <p className="font-serif italic text-lg text-white">
             {weddingData.bride} & {weddingData.groom}
           </p>
           <p>{weddingData.date} · {weddingData.venue}</p>
@@ -300,3 +300,4 @@ export const RSVPSection: React.FC = () => {
     </section>
   );
 };
+

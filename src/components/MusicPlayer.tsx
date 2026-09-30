@@ -76,9 +76,9 @@ export const MusicPlayer: React.FC = () => {
         {showPrompt && !isPlaying && (
           <div
             onClick={togglePlay}
-            className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#12241b]/95 border border-[#d4b07b]/40 text-[#f5ebd7] shadow-xl backdrop-blur-md text-xs cursor-pointer hover:border-[#d4b07b] transition-all animate-bounce"
+            className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#12241b]/95 border border-[#8c6721]/40 text-white shadow-xl backdrop-blur-md text-xs cursor-pointer hover:border-[#8c6721] transition-all animate-bounce"
           >
-            <Music className="w-3.5 h-3.5 text-[#d4b07b] animate-pulse" />
+            <Music className="w-3.5 h-3.5 text-[#8c6721] animate-pulse" />
             <span className="font-serif italic">Play Wedding Serenade</span>
           </div>
         )}
@@ -88,22 +88,22 @@ export const MusicPlayer: React.FC = () => {
           <button
             onClick={togglePlay}
             aria-label={isPlaying ? 'Pause music' : 'Play wedding music'}
-            className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#1b3b2b] hover:bg-[#25523c] text-[#f4dfb8] text-xs font-medium border border-[#3b634d]/60 transition-all cursor-pointer shadow-sm group"
+            className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#1b3b2b] hover:bg-[#25523c] text-[#6b4f1a] text-xs font-medium border border-[#3b634d]/60 transition-all cursor-pointer shadow-sm group"
           >
             {isPlaying ? (
               <>
-                <Pause className="w-3.5 h-3.5 text-[#d4b07b]" />
-                <span className="hidden md:inline font-serif italic text-[#e8eee9]">Playing Song</span>
+                <Pause className="w-3.5 h-3.5 text-[#8c6721]" />
+                <span className="hidden md:inline font-serif italic text-white">Playing Song</span>
                 {/* Visualizer bars */}
                 <div className="flex items-end gap-0.5 h-3">
-                  <div className="w-0.5 h-2 bg-[#d4b07b] animate-pulse" />
-                  <div className="w-0.5 h-3 bg-[#d4b07b] animate-pulse delay-75" />
-                  <div className="w-0.5 h-1.5 bg-[#d4b07b] animate-pulse delay-150" />
+                  <div className="w-0.5 h-2 bg-[#8c6721] animate-pulse" />
+                  <div className="w-0.5 h-3 bg-[#8c6721] animate-pulse delay-75" />
+                  <div className="w-0.5 h-1.5 bg-[#8c6721] animate-pulse delay-150" />
                 </div>
               </>
             ) : (
               <>
-                <Play className="w-3.5 h-3.5 text-[#d4b07b] fill-[#d4b07b]" />
+                <Play className="w-3.5 h-3.5 text-[#8c6721] fill-[#8c6721]" />
                 <span className="text-[11px] uppercase tracking-wider font-sans">Music</span>
               </>
             )}
@@ -114,9 +114,9 @@ export const MusicPlayer: React.FC = () => {
             <button
               onClick={toggleMute}
               aria-label={isMuted ? 'Unmute music' : 'Mute music'}
-              className="p-2 rounded-xl text-[#9cb5a6] hover:text-[#f4f7f4] hover:bg-white/10 transition-colors cursor-pointer"
+              className="p-2 rounded-xl text-gray-600 hover:text-white hover:bg-black/10 transition-colors cursor-pointer"
             >
-              {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#d4b07b]" />}
+              {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#8c6721]" />}
             </button>
           )}
         </div>
@@ -124,3 +124,4 @@ export const MusicPlayer: React.FC = () => {
     </>
   );
 };
+

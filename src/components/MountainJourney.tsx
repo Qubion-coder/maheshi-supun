@@ -36,8 +36,26 @@ export const MountainJourney: React.FC<MountainJourneyProps> = ({ children }) =>
   const currentElevation = 650 + scrollProgress * (3200 - 650);
 
   return (
-    <div className="relative min-h-screen text-[#e8eee9] overflow-x-hidden selection:bg-[#d4b07b]/30 selection:text-[#f8f5ee] bg-[#07120d]">
+    <div className="relative min-h-screen text-[#e8eee9] overflow-x-hidden selection:bg-[#8c6721]/30 selection:text-[#f8f5ee] bg-[#07120d]">
       
+      {/* Temp Static Background Image with Parallax */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#07120d]">
+        <div 
+          className="absolute top-0 left-0 w-full"
+          style={{
+            height: "120vh",
+            backgroundImage: "url('/Gemini_Generated_Image_9dsweu9dsweu9dsw.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "top center",
+            transform: `translateY(-${scrollProgress * 20}vh)`,
+            willChange: "transform",
+            opacity: 0.45
+          }}
+        />
+        {/* Dark green tinted overlay */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(7,18,13,0.75) 0%, rgba(17,38,26,0.65) 40%, rgba(11,27,18,0.70) 100%)" }} />
+      </div>
+
       {/* 1. Procedural Particle & Parallax Background */}
       <MountainAtmosphere scrollProgress={scrollProgress} elevation={currentElevation} />
 

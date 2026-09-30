@@ -63,18 +63,18 @@ export const BotanicalHerbarium: React.FC = () => {
       <div className="max-w-5xl mx-auto">
         {/* Editorial Herbarium Title */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 text-xs tracking-[0.25em] uppercase text-[#d4b07b] mb-3">
+          <div className="flex items-center justify-center gap-2 text-xs tracking-[0.25em] uppercase text-[#8c6721] mb-3">
             <Flower2 className="w-3.5 h-3.5" />
             <span>Floral Herbarium</span>
             <span aria-hidden="true">·</span>
             <span>Botanicals of the High Dolomites</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-5xl text-[#f3f7f4] tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl text-white tracking-tight">
             The Flowers Along Our Path
           </h2>
 
-          <div className="w-12 h-[1px] bg-[#d4b07b]/40 mx-auto my-4" />
+          <div className="w-12 h-[1px] bg-[#8c6721]/40 mx-auto my-4" />
 
           <p className="text-sm sm:text-base text-[#9eb2a4] leading-relaxed font-light max-w-xl mx-auto">
             High above the timberline, only the most resilient flora blossoms.
@@ -90,7 +90,7 @@ export const BotanicalHerbarium: React.FC = () => {
               onClick={() => setActiveSpecimen(item)}
               className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                 activeSpecimen.id === item.id
-                  ? 'bg-[#1b2d23] text-[#f4dfb8] border border-[#d4b07b]/60 shadow-lg'
+                  ? 'bg-[#1b2d23] text-[#6b4f1a] border border-[#8c6721]/60 shadow-lg'
                   : 'bg-[#111e17]/80 text-[#8ea496] hover:bg-[#16271e] hover:text-[#dbe7e0] border border-white/5'
               }`}
             >
@@ -120,7 +120,7 @@ export const BotanicalHerbarium: React.FC = () => {
 
             {/* Specimen Botanical Art Vector */}
             {activeSpecimen.svgPath === 'edelweiss' && (
-              <svg viewBox="0 0 100 100" className="w-full h-full text-[#e8eee9]" fill="none">
+              <svg viewBox="0 0 100 100" className="w-full h-full text-white" fill="none">
                 {/* Star-like velvety petals */}
                 {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((deg) => (
                   <ellipse
@@ -137,7 +137,7 @@ export const BotanicalHerbarium: React.FC = () => {
                   />
                 ))}
                 {/* Central golden florets */}
-                <circle cx="50" cy="50" r="8" fill="#d4b07b" />
+                <circle cx="50" cy="50" r="8" fill="#8c6721" />
                 <circle cx="50" cy="50" r="5" fill="#f5cf8c" />
                 {/* Stem & Leaves */}
                 <path d="M50 60 Q52 75 50 95" stroke="#5d7866" strokeWidth="2.5" strokeLinecap="round" />
@@ -171,7 +171,7 @@ export const BotanicalHerbarium: React.FC = () => {
             )}
 
             {activeSpecimen.svgPath === 'avens' && (
-              <svg viewBox="0 0 100 100" className="w-full h-full text-[#faeed2]" fill="none">
+              <svg viewBox="0 0 100 100" className="w-full h-full text-[#6b4f1a]" fill="none">
                 {/* 8 radiant petals */}
                 {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
                   <ellipse
@@ -202,12 +202,12 @@ export const BotanicalHerbarium: React.FC = () => {
           {/* Right: Archival Information & Romance */}
           <div className="flex-1 space-y-4">
             <div>
-              <div className="flex items-center gap-2 text-xs text-[#d4b07b] font-mono mb-1">
+              <div className="flex items-center gap-2 text-xs text-[#8c6721] font-mono mb-1">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{activeSpecimen.symbolism}</span>
               </div>
 
-              <h3 className="font-serif text-3xl sm:text-4xl text-[#f3f7f4]">
+              <h3 className="font-serif text-3xl sm:text-4xl text-white">
                 {activeSpecimen.commonName}
               </h3>
 
@@ -216,14 +216,14 @@ export const BotanicalHerbarium: React.FC = () => {
               </p>
             </div>
 
-            <div className="w-16 h-[1px] bg-[#d4b07b]/30" />
+            <div className="w-16 h-[1px] bg-[#8c6721]/30" />
 
             <div className="p-4 rounded-xl bg-[#09120e] border border-white/5 space-y-1">
               <div className="text-[11px] uppercase tracking-wider text-[#8da396] font-medium flex items-center gap-1.5">
-                <Info className="w-3.5 h-3.5 text-[#d4b07b]" />
+                <Info className="w-3.5 h-3.5 text-[#8c6721]" />
                 From Elena & Julian's Trail Journal:
               </div>
-              <p className="font-serif italic text-sm sm:text-base text-[#e0e9e3] leading-relaxed font-light">
+              <p className="font-serif italic text-sm sm:text-base text-white leading-relaxed font-light">
                 "{activeSpecimen.couplesNote}"
               </p>
             </div>
@@ -233,3 +233,4 @@ export const BotanicalHerbarium: React.FC = () => {
     </section>
   );
 };
+
