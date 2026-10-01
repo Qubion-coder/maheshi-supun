@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AdminPage } from './components/AdminPage';
 import { MountainJourney } from './components/MountainJourney';
 import { WeddingHero } from './components/WeddingHero';
 import { StorySection } from './components/StorySection';
@@ -13,6 +15,17 @@ import { MusicPlayer } from './components/MusicPlayer';
 import { IntroScreen } from './components/IntroScreen';
 
 export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/:guestName?" element={<InvitationRoutes />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+function InvitationRoutes() {
   const [hasEntered, setHasEntered] = useState(false);
 
   if (!hasEntered) {

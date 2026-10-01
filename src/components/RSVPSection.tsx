@@ -23,6 +23,7 @@ export const RSVPSection: React.FC = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [blessings, setBlessings] = useState(INITIAL_GUESTBOOK_BLESSINGS);
 
   useEffect(() => {
@@ -57,11 +58,37 @@ export const RSVPSection: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name.trim()) return;
 
+    setIsSubmitting(true);
+
     try {
+      // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzKnH1em9dEL3dtr6mliHjhs8yB3RTxE8AaoGRGm27j0mcWl3ktQ5WubhYLA9dv1fKJ/exec';
+      
+      // We use text/plain to avoid CORS preflight issues when sending directly from browser
+      if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
+        const formDataParams = new URLSearchParams();
+        // Pack data as a single JSON string in one parameter to avoid changing Apps Script
+        const payload = JSON.stringify({
+          name: formData.name,
+          attending: formData.attending,
+          guestsCount: formData.attending === 'yes' ? formData.guestsCount : 0,
+          blessing: formData.blessing
+        });
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          body: payload
+        });
+      }
+
       localStorage.setItem('wedding_rsvp_submitted_ms', 'true');
       localStorage.setItem('wedding_rsvp_data_ms', JSON.stringify(formData));
 
@@ -77,11 +104,14 @@ export const RSVPSection: React.FC = () => {
         setBlessings(updated);
         localStorage.setItem('wedding_blessings_maheshi_supun', JSON.stringify(updated));
       }
-    } catch {
-      // ignore
+      
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting RSVP:", error);
+      alert("Something went wrong while submitting. Please try again or use the WhatsApp option.");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setSubmitted(true);
   };
 
   return (
@@ -231,10 +261,11 @@ export const RSVPSection: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3.5 text-sm font-medium text-[#102016] bg-gradient-to-r from-[#8c6721] via-[#e5c083] to-[#8c6721] hover:brightness-110 rounded-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto px-8 py-3.5 text-sm font-medium text-[#102016] bg-gradient-to-r from-[#8c6721] via-[#e5c083] to-[#8c6721] hover:brightness-110 rounded-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     <Send className="w-4 h-4" />
-                    <span>Confirm RSVP Here</span>
+                    <span>{isSubmitting ? 'Sending RSVP...' : 'Confirm RSVP Here'}</span>
                   </button>
 
                   <a
@@ -259,42 +290,30 @@ export const RSVPSection: React.FC = () => {
           )}
         </div>
 
-        {/* Live Guestbook / Blessings Wall */}
-        <div className="mt-20">
-          <div className="text-center mb-10">
-            <div className="text-xs uppercase tracking-[0.2em] text-[#8c6721] mb-1">Cairn of Blessings</div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-white">
-              Words Along The Path
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {blessings.map((b) => (
-              <div
-                key={b.id}
-                className="p-6 rounded-2xl bg-[#0f2117]/80 border border-[#2b4c37]/60 backdrop-blur-md flex flex-col justify-between"
-              >
-                <p className="font-serif italic text-sm text-[#d4ded7] leading-relaxed mb-4 font-light">
-                  "{b.message}"
-                </p>
-                <div className="border-t border-white/5 pt-3 flex items-center justify-between text-xs text-[#899f92]">
-                  <span className="font-medium text-white">{b.name}</span>
-                  <span className="text-[#8c6721] text-[11px]">{b.timestamp}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Final Peaceful Signoff */}
         <footer className="mt-32 text-center text-xs text-[#7a9586] border-t border-white/5 pt-12 space-y-2">
-          <p className="font-serif italic text-lg text-white">
+          <p className="font-serif italic text-lg text-white font-bold">
             {weddingData.bride} & {weddingData.groom}
           </p>
           <p>{weddingData.date} · {weddingData.venue}</p>
-          <p className="text-[11px] text-[#556e5f]">
+          <p className="text-[11px] text-[#556e5f] font-bold mb-8">
             With love, {weddingData.brideShort} & {weddingData.groomShort}
           </p>
+
+          <div className="mt-12 pt-8 border-t border-[#2b4c37]/30">
+            <p className="text-[#899f92] text-[10px] sm:text-xs font-sans tracking-widest uppercase">
+              Want a beautiful wedding website like this? <br className="sm:hidden" />Create yours with{' '}
+              <a 
+                href="https://wa.me/94707819074" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-[#e5c083] hover:text-white transition-colors font-medium border-b border-[#e5c083]/30 hover:border-white pb-0.5"
+              >
+                invitemint
+              </a>
+            </p>
+          </div>
         </footer>
       </div>
     </section>

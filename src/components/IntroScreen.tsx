@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import gsap from 'gsap';
 import { Play } from 'lucide-react';
 import { mountainAudio } from '../utils/audioEngine';
@@ -8,6 +9,7 @@ interface IntroScreenProps {
 }
 
 export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
+  const { guestName } = useParams();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const textOverlayRef = useRef<HTMLDivElement>(null);
@@ -55,6 +57,12 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#07120d] text-white">
       {!isPlaying ? (
         <div className="animate-in fade-in duration-1000 flex flex-col items-center">
+          {guestName && (
+            <div className="text-center animate-in slide-in-from-bottom-4 duration-1000 delay-300 fill-mode-both mb-24">
+              <div className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#a2b8ab] mb-4">Specially Invited</div>
+              <div className="font-serif text-4xl md:text-6xl text-[#e5c083] font-bold tracking-wide">{guestName}</div>
+            </div>
+          )}
           <button 
             onClick={startIntro}
             className="group flex items-center gap-4 px-10 py-5 rounded-full bg-[#1b3a2a]/60 hover:bg-[#254d39]/80 border border-[#8c6721]/60 hover:border-[#8c6721] transition-all backdrop-blur-md shadow-[0_0_20px_rgba(212,176,123,0.15)] hover:shadow-[0_0_30px_rgba(212,176,123,0.3)] text-[#6b4f1a] cursor-pointer"
@@ -84,9 +92,9 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
               </div>
               
               <div className="flex justify-center items-center gap-4">
-                <span className="word text-[#8c6721] font-medium">Maheshi</span>
+                <span className="word text-[#8c6721] font-bold">Maheshi</span>
                 <span className="word italic font-light lowercase text-lg">&</span>
-                <span className="word text-[#8c6721] font-medium">Supun</span>
+                <span className="word text-[#8c6721] font-bold">Supun</span>
               </div>
 
             </div>

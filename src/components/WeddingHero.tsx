@@ -32,7 +32,7 @@ export const WeddingHero: React.FC = () => {
       <div ref={contentRef} className="max-w-4xl mx-auto flex flex-col items-center">
         
         {/* BRIDE */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl gold-gradient-text tracking-wide leading-tight uppercase font-medium drop-shadow-lg mb-4">
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl gold-gradient-text tracking-wide leading-tight uppercase font-bold drop-shadow-lg mb-4">
           {weddingData.bride}
         </h1>
 
@@ -43,7 +43,7 @@ export const WeddingHero: React.FC = () => {
         </div>
 
         {/* GROOM */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl gold-gradient-text tracking-wide leading-tight uppercase font-medium drop-shadow-lg mt-4 mb-10">
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl gold-gradient-text tracking-wide leading-tight uppercase font-bold drop-shadow-lg mt-4 mb-10">
           {weddingData.groom}
         </h1>
 

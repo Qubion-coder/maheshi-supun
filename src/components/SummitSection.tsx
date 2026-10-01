@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { weddingData } from '../data/weddingData';
@@ -6,6 +7,7 @@ import { weddingData } from '../data/weddingData';
 gsap.registerPlugin(ScrollTrigger);
 
 export const SummitSection: React.FC = () => {
+  const { guestName } = useParams();
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const lightRef = useRef<HTMLDivElement>(null);
@@ -62,14 +64,21 @@ export const SummitSection: React.FC = () => {
 
       <div ref={textRef} className="relative max-w-3xl w-full flex flex-col items-center text-center">
         
-        <p className="font-sans text-sm md:text-base text-white uppercase tracking-[0.25em] leading-loose mb-16 drop-shadow-md">
+        <div className="font-sans text-sm md:text-base text-white uppercase tracking-[0.25em] leading-loose mb-16 drop-shadow-md">
           Together with our families,<br />
-          we invite you to celebrate<br />
-          our special day.
-        </p>
+          we cordially invite
+          {guestName ? (
+            <span className="block my-6 font-serif text-3xl md:text-5xl gold-gradient-text normal-case tracking-normal font-bold">
+              {guestName}
+            </span>
+          ) : (
+            <> you <br /></>
+          )}
+          to celebrate our special day with us.
+        </div>
 
         {/* BRIDE */}
-        <h3 className="font-serif text-2xl md:text-4xl gold-gradient-text font-medium uppercase tracking-widest drop-shadow-lg mb-3">
+        <h3 className="font-serif text-2xl md:text-4xl gold-gradient-text font-bold uppercase tracking-widest drop-shadow-lg mb-3">
           {weddingData.bride}
         </h3>
 
@@ -78,7 +87,7 @@ export const SummitSection: React.FC = () => {
         </div>
 
         {/* GROOM */}
-        <h3 className="font-serif text-2xl md:text-4xl gold-gradient-text font-medium uppercase tracking-widest drop-shadow-lg mt-3 mb-12">
+        <h3 className="font-serif text-2xl md:text-4xl gold-gradient-text font-bold uppercase tracking-widest drop-shadow-lg mt-3 mb-12">
           {weddingData.groom}
         </h3>
 
@@ -97,7 +106,7 @@ export const SummitSection: React.FC = () => {
 
         <div className="font-serif italic text-2xl md:text-3xl text-white drop-shadow-md">
           With love,<br />
-          <span className="gold-gradient-text mt-4 block not-italic font-medium uppercase tracking-widest text-lg">Maheshi & Supun</span>
+          <span className="gold-gradient-text mt-4 block not-italic font-bold uppercase tracking-widest text-lg">Maheshi & Supun</span>
         </div>
 
       </div>

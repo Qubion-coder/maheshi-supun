@@ -1,8 +1,8 @@
 import { WeddingConfig, ElevationStage } from '../types/wedding';
 
 export const weddingData: WeddingConfig = {
-  bride: "HEWA LUNUWILAGE MAHESHI PRIYANVADA",
-  groom: "SUPUN PRIYANJANA UDAYARANGA DE SILVA",
+  bride: "MAHESHI PRIYANVADA",
+  groom: "SUPUN PRIYANJANA",
   brideShort: "Maheshi",
   groomShort: "Supun",
   parents: {
